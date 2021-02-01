@@ -6,9 +6,16 @@
 <header th:replace="fragments :: header"></header>
 
 <ul>
-    <th:block th:each="event : ${events}">
-        <li th:text="${event}"></li>
-    </th:block>
+    <table th:each="event : ${events}">
+        <tr>
+            <td th:text="${event.getName()}"></td>
+            <td th:text="${event.getDesc()}"></td>
+            <td> <img th:src="@{${event.getPictureURL()}}"> </td>
+           <!-- if using picture from web
+            <td><img th:src="${event.getPictureURL()}"></td>-->
+            <!--<td th:replace="fragments :: home-link"></td>-->
+        </tr>
+    </table>
 </ul>
 
 </body>
