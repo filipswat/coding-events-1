@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
 
 <header th:replace="fragments :: header"></header>
 
 <ul>
-    <table th:each="event : ${events}">
+    <table class="table table-striped" th:each="event : ${events}">
         <tr>
             <td th:text="${event.getName()}"></td>
             <td th:text="${event.getDesc()}"></td>
-            <td> <img th:src="@{${event.getPictureURL()}}"> </td>
+            <td> <img th:src="@{${event.getPictureURL()}}" style="width:40px;height:60px"> </td>
            <!-- if using picture from web
             <td><img th:src="${event.getPictureURL()}"></td>-->
             <!--<td th:replace="fragments :: home-link"></td>-->

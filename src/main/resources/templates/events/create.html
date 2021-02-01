@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
 
 <header th:replace="fragments :: header"></header>
 
-<form method="post">
-    <input type="text" name="eventName">
-    <input type="text" name="eventDesc">
+<form method="post" class="form-group">
+    <label>Event Name:
+        <input type="text" name="eventName" class="form-control">
+    </label>
+    <label>Description:
+        <input type="text" name="eventDesc" class="form-control">
+    </label>
     <!--if using URL of picture from web
     <input type="text" name="pictureURL">-->
     <input type="submit" value="Create">
